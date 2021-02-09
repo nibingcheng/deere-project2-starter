@@ -5,13 +5,19 @@ const router = express.Router();
 const UserModel = require("../models").User;
 const DineTableModel = require("../models").DineTable;
 
+// SIGN OUT ROUTE
+router.get("/logout", (req, res) => {
+  // res.clearCookie("jwt");
+  res.redirect("/");
+});
+
 // Signup
 router.get('/signup', (req,res) => {
   res.render('users/signup.ejs');   
 })
 // SIGNUP POST
 router.post("/profile", (req,res)=>{
-  console.log('hello!', req.body);  
+  // console.log('hello!', req.body);  
   UserModel.create(req.body).then((thisUser)=>{
       res.redirect('/users/profile/'+thisUser.id);
   })
@@ -46,7 +52,7 @@ router.get("/profile/:id", (req, res) => {
 });
 //EDIT PUT
 router.put('/profile/:index', (req, res) => { 
-  console.log('hello!', req.body, req.params.index);
+  // console.log('hello!', req.body, req.params.index);
   UserModel.update(req.body, {
       where: {id: req.params.index },
       // returnin: true
