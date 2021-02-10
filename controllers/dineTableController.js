@@ -6,15 +6,68 @@ const User = require('../models').User;
 const DineTable = require("../models").DineTable;
 const Order = require("../models").Order;
 
-//index
+//INDEX
 router.get('/', function(req, res) {
     DineTable.findAll().then((allTables) => {
         res.render('index.ejs', {
             allTables: allTables
-        }); console.log('hello!', allTables);
+        }); 
     })
 });   
 
+//NEW
+router.get('/new', (req,res) => {
+    User.findAll().then((allUsers) => {
+        res.render('new.ejs', {
+            users: allUsers,
+        });
+    })
+})
+//POST add new dine table 
+router.post("/", (req,res)=>{
+    // console.log("Add dine table request: ", req.body);
+    DineTable.create(req.body).then((newDineTable) => {
+        res.redirect('/dinetable');
+    })
+})
 
+//EDIT
+router.get('/:id/edit', (req, res)=> {
+    DineTable.findByPk(req.params.id, {
+        include: [{ model: User}, {model: Food}],
+    }).then((foundDineTable) => {         
+        res.render('edit.ejs', { 
+            thisTable: foundDineTable,
+        });
+    })    
+})
+//PUT update dine table
+router.put('/:id', (req, res) => { 
+    DineTable.update(req.body, {
+        where: { id: req.params.id },
+        returning: true,
+    }).then((foundDineTable) => {
+        res.redirect("/dinetable");
+    });
+});
+
+//SHOW
+router.get('/:id', function(req, res) {
+    let id = req.params.id;
+    DineTable.findByPk(id, {
+        include: [{ model: User}, {model: Food}],
+    }).then((foundDineTable) => {
+        res.render('show.ejs', {
+            thisTable: foundDineTable,
+        })
+    });
+});
+
+//delete
+router.delete("/:id", (req, res) => {
+    DineTable.destroy({ where: { id: req.params.id } }).then(() => {
+      res.redirect("/dinetable");
+    });
+});
 
 module.exports = router;

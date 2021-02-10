@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='/app.css'>
+</head>
+<body>
+    <h1>Assign waiter to table </h1>
+    <form action="/dinetable/<%=thisTable.id%>?_method=PUT" method="POST">
+        Name: <%= thisTable.name %> <br>
+        Waiter ID: <input type="text" name="userId" value="<%= thisTable.userId %>"/> <br>    
+        Waiter name: <input type="text" name="name" value="<%= thisTable.User.name %>"/> <br>
+        <input type="submit" value="EDIT" />
+    </form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='/css/app.css'>
+</head>
+<body>
+    <h1>Add New Dine Table Page</h1>
+    <form action="/dinetable" method="POST">
+        Table Name: <input type="text" name="name"><br /><br />
+        Waiter: 
+        <select name="userId">
+            <% for ( let i = 0; i < users.length; i++ ) { let selected = ( i == 0
+                ) ? "selected" : ""; %>
+                <option value="<%=users[i].id%>" selected>
+                    <%=users[i].name%>
+                </option>
+                <% } %>
+        </select>
+        <br>
+        <br>
+        <input type="submit" name="" value="Add dine table"/>    
+    </form>
+</body>
+</html>
