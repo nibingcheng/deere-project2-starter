@@ -1,0 +1,22 @@
+body {
+    background-color: azure;
+    margin-left: 50px;
+}
+
+div > input {
+    display: inline;
+    color: white;
+    background-color: red;
+    /* font-size: 1em; */
+}
+
+h1 {
+    color: green;
+}
+
+#edit {
+    display: inline;
+    margin-left: 10px;
+    font-size: 0.9em;
+    text-decoration: none;
+}

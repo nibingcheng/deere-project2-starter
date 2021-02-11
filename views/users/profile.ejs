@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel='stylesheet' href='/app.css'>
     <title>User Profile Page</title>
   </head>
 
@@ -23,7 +24,9 @@
     </form>
     <br />
     <form action="/users/<%= user.id %>?_method=DELETE" method="POST">
+      <div class="delete">
       <input type="submit" value="Delete User" />
+      </div>
     </form>
 
     <br /><br />

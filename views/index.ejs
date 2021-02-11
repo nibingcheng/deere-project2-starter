@@ -12,9 +12,11 @@
                 <li>
                     <a href="/dinetable/<%= allTables[i].id; %>"> Table name: <%= allTables[i].name; %></a>
                     <form action='/dinetable/<%= allTables[i].id; %>?_method=DELETE' method='POST'>
+                        <div class="delete">
                         <input type='submit' value="delete"/>
+                        </div>
                     </form>
-                    <a href="/dinetable/<%= allTables[i].id; %>/edit">Edit</a><br /><br />
+                    <a id="edit" href="/dinetable/<%= allTables[i].id; %>/edit">Edit</a><br /><br />
                 </li>
             <% } %>
         
