@@ -45,8 +45,13 @@ router.get("/profile/:id", (req, res) => {
   UserModel.findByPk(req.params.id, {
     include: [{ model: DineTableModel}],
   }).then((userProfile) => {
-    res.render("users/profile.ejs", {
-      user: userProfile,
+    DineTableModel.findAll({
+      where: {userId: userProfile.id}
+    }).then((foundDineTables) => {
+      res.render("users/profile.ejs", {
+        user: userProfile,
+        dineTables: foundDineTables
+      })
     });
   });
 });

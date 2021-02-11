@@ -15,6 +15,13 @@
     <!-- <p>Waiter ID: <%= thisTable.userId %></p> -->
     <p>Waiter Name: <%= thisTable.User.name %></p>
     
+    <h3>Food ordered by this table:</h3>
+    <% for (let i = 0; i < thisTable.Food.length; i++){ %>
+    <ul>
+        <li><%=thisTable.Food[i].name%></a></li>
+    </ul>
+    <% } %>
+
     <a href="/dinetable">Back</a>
 </body>
 </html>

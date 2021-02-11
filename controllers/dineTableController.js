@@ -35,14 +35,17 @@ router.post("/", (req,res)=>{
 router.get('/:id/edit', (req, res)=> {
     DineTable.findByPk(req.params.id, {
         include: [{ model: User}, {model: Food}],
-    }).then((foundDineTable) => {         
-        res.render('edit.ejs', { 
-            thisTable: foundDineTable,
-        });
+    }).then((foundDineTable) => {
+        User.findAll().then((allUsers) => {         
+            res.render('edit.ejs', { 
+                thisTable: foundDineTable,
+                users: allUsers,
+            });
+        })
     })    
 })
 //PUT update dine table
-router.put('/:id', (req, res) => { 
+router.put('/:id', (req, res) => { console.log('Hello!', req.body); 
     DineTable.update(req.body, {
         where: { id: req.params.id },
         returning: true,

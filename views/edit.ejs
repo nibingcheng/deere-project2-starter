@@ -9,9 +9,21 @@
 <body>
     <h1>Assign waiter to table </h1>
     <form action="/dinetable/<%=thisTable.id%>?_method=PUT" method="POST">
-        Name: <%= thisTable.name %> <br>
-        Waiter ID: <input type="text" name="userId" value="<%= thisTable.userId %>"/> <br>    
-        Waiter name: <input type="text" name="name" value="<%= thisTable.User.name %>"/> <br>
+        Table Name: <%= thisTable.name %> <br><br />
+          
+        Waiter name: <%= thisTable.User.name %> <br>
+        <br>
+        Assign to: 
+        <select name="userId">
+            <% for ( let i = 0; i < users.length; i++ ) { let selected = ( i == 0
+                ) ? "selected" : ""; %>
+                <option value="<%=users[i].id%>" selected>
+                    <%=users[i].name%>
+                </option>
+                <% } %>
+        </select>
+        <br>
+        <br>
         <input type="submit" value="EDIT" />
     </form>
 </body>
