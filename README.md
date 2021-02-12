@@ -6,7 +6,7 @@ This is the full-stack application project of General Assembly's SEI course.
 
 ## Project Objective 
 
-Create a full CRUD app utilzing the techonologies taught in unit 2.
+Create a full CRUD app utilzing RESTful route methods taught in unit 2.
 
 ## Description of the app
 
