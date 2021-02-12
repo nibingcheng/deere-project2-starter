@@ -10,7 +10,7 @@ Create a full CRUD app utilzing RESTful route methods taught in unit 2.
 
 ## Description of the app
 
-There are a certain number of tables in a restaurant to serve customers. Each table is identified by its name and only has one waiter associated with it. the customers at each table can order multiple food items from the restaurant menu.
+There are a certain number of tables in a restaurant to serve customers. Each table is identified by its name and only has one waiter associated with it. Customers at each table can order multiple food items from the restaurant menu.
 
 There are several waiters/waitresses in the restaurant, each of whom can serve a number of tables at the same time. 
 
@@ -19,7 +19,7 @@ Not in scope: it is assumed that the app can access the dataset which contains t
 
 ## instructionss
 
-The landing page is at https://jdseiunit2project.herokuapp.com/
+The app landing page is at https://jdseiunit2project.herokuapp.com/
   
 - Click the signup to set up a new waiter in the system. Click the login and then enter the credentials will bring up the waiter's profile. 
 
@@ -27,9 +27,9 @@ The landing page is at https://jdseiunit2project.herokuapp.com/
   
 - It is possible to modify personal information after logged in, as well as to do deletion, i.e remove that person from the database. 
   
-- The profile page also shows that individual is responsible for which and how many tables currently.
+- The profile page also shows that the particular individual is responsible for which and how many tables currently.
 
-- There is an index page that lists all the tables currently being in use. Click the Add new table will bring an additional table into service (for example: new customers had arrived). A new waiter can be assigned to the newly added table from this page.
+- There is an index page that lists all the tables currently being in use. Click the Add new table will bring an additional table into service (for example: new customers had arrived). A new waiter shall be assigned to the newly added table from this page.
 
 - From the list of table page, it is possible to remove a table (for example: custumers finished eating and left). Click the Edit will make it possible to assign this table to a different waiter from its current one if so desired.
 
