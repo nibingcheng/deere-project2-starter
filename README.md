@@ -21,7 +21,9 @@ Not in scope: it is assumed that the app can access the dataset which contains t
 
 The landing page is at https://jdseiunit2project.herokuapp.com/
   
-- Click the signup to set up a new waiter in the system. Click the login and then enter the credentials will bring up the waiter's profile. The logout function is not implemented.
+- Click the signup to set up a new waiter in the system. Click the login and then enter the credentials will bring up the waiter's profile. 
+
+- If the entered username and password don't match, it will redirect back to homepage. The logout function is not implemented.
   
 - It is possible to modify personal information after logged in, as well as to do deletion, i.e remove that person from the database. 
   

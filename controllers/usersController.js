@@ -34,8 +34,14 @@ router.post('/login', (req, res)=>{
       username: req.body.username, 
       password: req.body.password
       }        
-  }).then((thisUser) => {           
-      res.redirect('/users/profile/'+thisUser.id);
+  }).then((thisUser) => { 
+      if (thisUser == null) {
+        console.log('Username & password do not match.');
+        res.redirect('/');
+      }   
+      else {
+        res.redirect('/users/profile/'+thisUser.id);
+      }
   });
 })
 
