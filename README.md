@@ -27,17 +27,17 @@ The landing page is at https://jdseiunit2project.herokuapp.com/
   
 - The profile page also shows that individual is responsible for which and how many tables currently.
 
-- There is an index page that lists all the tables currently being in use. Click the Add new table will bring an additional table into service (for example: new customers had arrived). A new waiter shall be assigned to the newly added table.
+- There is an index page that lists all the tables currently being in use. Click the Add new table will bring an additional table into service (for example: new customers had arrived). A new waiter can be assigned to the newly added table from this page.
 
-- From the list of table page, it is possible to remove a table (for example: custumers finished eating and left). Click the Edit will make it possible to assign this table to a different waiter from its current one.
+- From the list of table page, it is possible to remove a table (for example: custumers finished eating and left). Click the Edit will make it possible to assign this table to a different waiter from its current one if so desired.
 
-- From the list of table page, click the name of the table will redirect to another page on which waiter's name and menu items ordered are shown.  
+- From the list of table page, click the name of the table will redirect to a SHOW page where waiter's name and menu items ordered are shown.  
 
 ## Known issues
 
 - The app lacks the logic to allow deletion of a waiter only when no table is being served by this individual. If deleted while a certain dine table is associated with this person, click the table name to see info on that table will cause error.
 
-- The order list (which dine table has ordered what) is manually seeded and not updated by this app. For demo purpose it just contains table ID equals to 1 and 2. Therefore, conceivably after certain number of add/delete maneuvering those tableId won't exist anymore. 
+- The order list (which dine table has ordered what) is manually seeded and not updated by this app. For demo purpose it just contains table ID equals to 1 and 2. Therefore, after certain number of add/delete users those tableId won't exist anymore. This will cause error.
 
 ## Future improvement
 
@@ -46,9 +46,9 @@ The landing page is at https://jdseiunit2project.herokuapp.com/
 
 - The above mentioned known issue should be addressed by adding some interlock logic.
 
-- Add functionality to be able to edit menu items ordered (add/subtract) as well as to include other info such as unit price, billed amount, and tips.
+- Add functionality to be able to edit menu items ordered (add/subtract) as well as to include other info such as menu item's unit price, billed amount, and tips.
 
-- Additional logic can be implemented to prevent adding infinite number of dine tables because no capacity limit is being taken into consideration.
+- Additional logic can be implemented to prevent adding infinite number of dine tables because right now no capacity limit is being taken into consideration.
 
 
 ## User stories
@@ -71,5 +71,5 @@ The landing page is at https://jdseiunit2project.herokuapp.com/
 
 - As the dining hall manager, I should be able to add a tables to the in-use list when new customers arrive.
 
-- As the dining hall manager, I should be able to add a new waiter.
+- As the dining hall manager, I should be able to sign up a new waiter.
 
